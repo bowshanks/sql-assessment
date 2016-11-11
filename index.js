@@ -91,14 +91,15 @@ app.put('/api/vehicle/:vehicleId/user/:userId', function(req, res) {
 });
 
 app.delete('/api/user/:userId/vehicle/:vehicleId', function(req, res) {
-  db.remove_vehicle_owner([req.params.userId,req.params.vehicleId],function(err,success){
-    res.sendStatus(202);
+  db.remove_vehicle_owner([req.params.vehicleId],function(err,success){
+    console.log(err);
+    res.sendStatus(200);
   })
 });
 
 app.delete('/api/vehicle/:vehicleId', function(req, res) {
   db.delete_vehicle([req.params.vehicleId],function(err,success){
-    res.sendStatus(202);
+    res.sendStatus(200);
   })
 });
 

@@ -1,2 +1,2 @@
-Update Vehicles set ownerId = NULL
-Where id = CAST($2 as int);
+Update Vehicles set ownerid = NULL
+Where id = CAST($1 as int);
